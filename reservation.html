@@ -159,15 +159,19 @@ Bootstrap 5 HTML CSS Template
                                                         
                                                         <!-- Trash Can -->
                                                         <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-trash-can" class="form-check-input" value="Trash Can">
-                                                                <label for="cleaning-trash-can" class="form-check-label text-white">
-                                                                    <strong>Trash Can</strong> — <span class="text-warning">$13.40</span>
-                                                                </label>
+                                                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                                                <div class="service-info">
+                                                                    <strong class="text-white">Trash Can</strong> — <span class="text-warning">$13.40</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Full interior and exterior wash</small>
+                                                                </div>
+                                                                <div class="quantity-counter d-flex align-items-center mt-2 mt-sm-0">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Trash Can" aria-label="Decrease Trash Can quantity">−</button>
+                                                                    <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-trash-can" data-service="Trash Can" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Trash Can quantity">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Trash Can" aria-label="Increase Trash Can quantity">+</button>
+                                                                </div>
                                                             </div>
-                                                            <small class="text-white-50 d-block ms-4 mt-1">Full interior and exterior wash</small>
-                                                            <div class="form-check ms-4 mt-2">
-                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-trash-can-deodorizing" class="form-check-input" value="Trash Can - Deodorizing Add-on">
+                                                            <div class="form-check ms-0 mt-2">
+                                                                <input type="checkbox" name="flat-fee-addons[]" id="cleaning-trash-can-deodorizing" class="form-check-input" value="Trash Can - Deodorizing Add-on">
                                                                 <label for="cleaning-trash-can-deodorizing" class="form-check-label text-white-50">
                                                                     Add Trash Can Deodorizing (+$5)
                                                                 </label>
@@ -176,46 +180,62 @@ Bootstrap 5 HTML CSS Template
 
                                                         <!-- Mailbox -->
                                                         <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-mailbox" class="form-check-input" value="Mailbox">
-                                                                <label for="cleaning-mailbox" class="form-check-label text-white">
-                                                                    <strong>Mailbox</strong> — <span class="text-warning">$10.05</span>
-                                                                </label>
+                                                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                                                <div class="service-info">
+                                                                    <strong class="text-white">Mailbox</strong> — <span class="text-warning">$10.05</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Exterior cleaning</small>
+                                                                </div>
+                                                                <div class="quantity-counter d-flex align-items-center mt-2 mt-sm-0">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Mailbox" aria-label="Decrease Mailbox quantity">−</button>
+                                                                    <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-mailbox" data-service="Mailbox" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Mailbox quantity">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Mailbox" aria-label="Increase Mailbox quantity">+</button>
+                                                                </div>
                                                             </div>
-                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior cleaning</small>
                                                         </div>
 
                                                         <!-- Outdoor Furniture -->
                                                         <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-outdoor-furniture" class="form-check-input" value="Outdoor Furniture">
-                                                                <label for="cleaning-outdoor-furniture" class="form-check-label text-white">
-                                                                    <strong>Outdoor Furniture</strong> — <span class="text-warning">$13.40</span>
-                                                                </label>
+                                                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                                                <div class="service-info">
+                                                                    <strong class="text-white">Outdoor Furniture</strong> — <span class="text-warning">$13.40</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Plastic, metal, wood. Removes dirt, algae, and buildup</small>
+                                                                </div>
+                                                                <div class="quantity-counter d-flex align-items-center mt-2 mt-sm-0">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Outdoor Furniture" aria-label="Decrease Outdoor Furniture quantity">−</button>
+                                                                    <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-outdoor-furniture" data-service="Outdoor Furniture" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Outdoor Furniture quantity">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Outdoor Furniture" aria-label="Increase Outdoor Furniture quantity">+</button>
+                                                                </div>
                                                             </div>
-                                                            <small class="text-white-50 d-block ms-4 mt-1">Plastic, metal, wood. Removes dirt, algae, and buildup</small>
                                                         </div>
 
                                                         <!-- Garage Door -->
                                                         <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-garage-door" class="form-check-input" value="Garage Door">
-                                                                <label for="cleaning-garage-door" class="form-check-label text-white">
-                                                                    <strong>Garage Door</strong> — <span class="text-warning">$10.05</span>
-                                                                </label>
+                                                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                                                <div class="service-info">
+                                                                    <strong class="text-white">Garage Door</strong> — <span class="text-warning">$10.05</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Exterior only. Removes dirt and stains</small>
+                                                                </div>
+                                                                <div class="quantity-counter d-flex align-items-center mt-2 mt-sm-0">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Garage Door" aria-label="Decrease Garage Door quantity">−</button>
+                                                                    <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-garage-door" data-service="Garage Door" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Garage Door quantity">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Garage Door" aria-label="Increase Garage Door quantity">+</button>
+                                                                </div>
                                                             </div>
-                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior only. Removes dirt and stains</small>
                                                         </div>
 
                                                         <!-- AC Condenser -->
                                                         <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-ac-condenser" class="form-check-input" value="AC Condenser">
-                                                                <label for="cleaning-ac-condenser" class="form-check-label text-white">
-                                                                    <strong>AC Condenser</strong> — <span class="text-warning">$10.05</span>
-                                                                </label>
+                                                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                                                <div class="service-info">
+                                                                    <strong class="text-white">AC Condenser</strong> — <span class="text-warning">$10.05</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Light-pressure exterior rinse only. No disassembly</small>
+                                                                </div>
+                                                                <div class="quantity-counter d-flex align-items-center mt-2 mt-sm-0">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="AC Condenser" aria-label="Decrease AC Condenser quantity">−</button>
+                                                                    <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-ac-condenser" data-service="AC Condenser" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="AC Condenser quantity">
+                                                                    <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="AC Condenser" aria-label="Increase AC Condenser quantity">+</button>
+                                                                </div>
                                                             </div>
-                                                            <small class="text-white-50 d-block ms-4 mt-1">Light-pressure exterior rinse only. No disassembly</small>
                                                         </div>
                                                     </div>
 
@@ -412,6 +432,30 @@ Bootstrap 5 HTML CSS Template
         <script src="js/jquery.sticky.js"></script>
         <script src="js/vegas.min.js"></script>
         <script src="js/custom.js"></script>
+
+        <!-- Quantity Counter Functionality -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize quantity counter functionality
+                const qtyButtons = document.querySelectorAll('.qty-btn');
+                qtyButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const service = this.dataset.service;
+                        const action = this.dataset.action;
+                        const input = document.querySelector('.qty-input[data-service="' + service + '"]');
+                        let currentValue = parseInt(input.value) || 0;
+
+                        if (action === 'increase') {
+                            currentValue++;
+                        } else if (action === 'decrease' && currentValue > 0) {
+                            currentValue--;
+                        }
+
+                        input.value = currentValue;
+                    });
+                });
+            });
+        </script>
   
         <script type="module">
             // Import the functions you need from the SDKs you need
@@ -466,7 +510,23 @@ Bootstrap 5 HTML CSS Template
                         const message = document.getElementById('message').value.trim();
                         const membershipInterest = document.getElementById('membership-interest').checked;
 
-                        // Get selected cleaning areas
+                        // Get flat fee items with quantities > 0
+                        const flatFeeItems = {};
+                        const qtyInputs = document.querySelectorAll('.qty-input');
+                        qtyInputs.forEach(input => {
+                            const qty = parseInt(input.value) || 0;
+                            if (qty > 0) {
+                                flatFeeItems[input.dataset.service] = qty;
+                            }
+                        });
+
+                        // Get flat fee add-ons (like deodorizing)
+                        const flatFeeAddonCheckboxes = document.querySelectorAll('input[name="flat-fee-addons[]"]:checked');
+                        flatFeeAddonCheckboxes.forEach(cb => {
+                            flatFeeItems[cb.value] = 1;
+                        });
+
+                        // Get selected Per Square Foot cleaning areas (checkboxes)
                         const cleaningAreaCheckboxes = document.querySelectorAll('input[name="cleaning-areas[]"]:checked');
                         const cleaningAreas = Array.from(cleaningAreaCheckboxes).map(cb => cb.value);
 
@@ -501,9 +561,12 @@ Bootstrap 5 HTML CSS Template
                             document.getElementById('city').focus();
                             return;
                         }
-                        if (cleaningAreas.length === 0) {
+                        // Check if at least one service is selected (either flat fee or per sq ft)
+                        const hasFlatFeeItems = Object.keys(flatFeeItems).length > 0;
+                        const hasCleaningAreas = cleaningAreas.length > 0;
+                        if (!hasFlatFeeItems && !hasCleaningAreas) {
                             alert('Please select at least one service.');
-                            document.getElementById('cleaning-trash-can').focus();
+                            document.getElementById('qty-trash-can').focus();
                             return;
                         }
 
@@ -517,6 +580,7 @@ Bootstrap 5 HTML CSS Template
                             city: city,
                             state: state,
                             postalCode: postalCode,
+                            flatFeeItems: flatFeeItems,
                             cleaningAreas: cleaningAreas,
                             membershipInterest: membershipInterest,
                             message: message,
@@ -531,6 +595,10 @@ Bootstrap 5 HTML CSS Template
                             console.log('Reservation submitted successfully with ID:', docRef.id);
                             alert('Thank you! Your reservation has been submitted successfully.');
                             form.reset();
+                            // Reset quantity counters to 0
+                            document.querySelectorAll('.qty-input').forEach(input => {
+                                input.value = 0;
+                            });
                         } catch (error) {
                             console.error('Error submitting reservation:', error.code || 'unknown_error', error.message || '');
                             alert('There was an error submitting your reservation. Please try again.');
