@@ -90,7 +90,7 @@ Bootstrap 5 HTML CSS Template
                             <div class="booking-form-wrap">
                                 <div class="row">
                                     <div class="col-lg-7 col-12 p-0">
-                                        <form class="custom-form booking-form" action="#" method="post" role="form">
+                                        <form id="reservation-form" class="custom-form booking-form" role="form">
                                             <div class="text-center mb-4 pb-lg-2">
                                                 <em class="text-white">Fill out the reservation form</em>
 
@@ -308,141 +308,141 @@ Bootstrap 5 HTML CSS Template
         <script src="js/custom.js"></script>
   
         <script type="module">
-
             // Import the functions you need from the SDKs you need
-
             import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
-
             import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
             // Your web app's Firebase configuration
-
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
             const firebaseConfig = {
-
                 apiKey: "AIzaSyBeoa1fyu3sDPDNa0G4z_TiJEdTKDxiOcU",
- 
                 authDomain: "fart-bf39f.firebaseapp.com",
- 
                 databaseURL: "https://fart-bf39f-default-rtdb.firebaseio.com",
- 
                 projectId: "fart-bf39f",
-  
                 storageBucket: "fart-bf39f.firebasestorage.app",
- 
                 messagingSenderId: "64630883432",
-  
                 appId: "1:64630883432:web:642e09d25e787d4002a7dd",
-   
                 measurementId: "G-KR9NCZMX1Y"
-
             };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const db = getFirestore(app);
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const db = getFirestore(app);
 
-  // Debug: Verify Firebase initialization (shows boolean for production safety)
-  console.log('Firebase initialized:', !!app);
-  console.log('Firestore db available:', !!db);
+            // Debug: Verify Firebase initialization (shows boolean for production safety)
+            console.log('Firebase initialized:', !!app);
+            console.log('Firestore db available:', !!db);
 
-  // Form submission handler
-  const form = document.querySelector('.booking-form');
+            // Wait for DOM to be fully loaded before attaching event handlers
+            // Note: Module scripts are deferred, so DOM may already be loaded
+            function initForm() {
+                // Form submission handler - use ID selector for more reliable selection
+                const form = document.getElementById('reservation-form');
 
-  // Debug: Check if form is found (shows boolean for production safety)
-  console.log('Form found:', !!form);
+                // Debug: Check if form is found (shows boolean for production safety)
+                console.log('Form found:', !!form);
 
-  if (form) {
-    form.addEventListener('submit', async function(e) {
-    e.preventDefault();
+                if (form) {
+                    form.addEventListener('submit', async function(e) {
+                        console.log('Form submitted!');
+                        e.preventDefault();
 
-    // Get form values
-    const firstName = document.getElementById('first-name').value.trim();
-    const lastName = document.getElementById('last-name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const street = document.getElementById('street-address').value.trim();
-    const city = document.getElementById('city').value.trim();
-    const state = document.getElementById('state').value.trim();
-    const postalCode = document.getElementById('postal-code').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const membershipInterest = document.getElementById('membership-interest').checked;
+                        // Get form values
+                        const firstName = document.getElementById('first-name').value.trim();
+                        const lastName = document.getElementById('last-name').value.trim();
+                        const email = document.getElementById('email').value.trim();
+                        const phone = document.getElementById('phone').value.trim();
+                        const street = document.getElementById('street-address').value.trim();
+                        const city = document.getElementById('city').value.trim();
+                        const state = document.getElementById('state').value.trim();
+                        const postalCode = document.getElementById('postal-code').value.trim();
+                        const message = document.getElementById('message').value.trim();
+                        const membershipInterest = document.getElementById('membership-interest').checked;
 
-    // Get selected cleaning areas
-    const cleaningAreaCheckboxes = document.querySelectorAll('input[name="cleaning-areas[]"]:checked');
-    const cleaningAreas = Array.from(cleaningAreaCheckboxes).map(cb => cb.value);
+                        // Get selected cleaning areas
+                        const cleaningAreaCheckboxes = document.querySelectorAll('input[name="cleaning-areas[]"]:checked');
+                        const cleaningAreas = Array.from(cleaningAreaCheckboxes).map(cb => cb.value);
 
-    // Validate required fields
-    if (!firstName) {
-      alert('Please enter your first name.');
-      document.getElementById('first-name').focus();
-      return;
-    }
-    if (!lastName) {
-      alert('Please enter your last name.');
-      document.getElementById('last-name').focus();
-      return;
-    }
-    if (!email) {
-      alert('Please enter your email address.');
-      document.getElementById('email').focus();
-      return;
-    }
-    if (!phone) {
-      alert('Please enter your phone number.');
-      document.getElementById('phone').focus();
-      return;
-    }
-    if (!street) {
-      alert('Please enter your street address.');
-      document.getElementById('street-address').focus();
-      return;
-    }
-    if (!city) {
-      alert('Please enter your city.');
-      document.getElementById('city').focus();
-      return;
-    }
-    if (cleaningAreas.length === 0) {
-      alert('Please select at least one cleaning area.');
-      document.getElementById('cleaning-kitchen').focus();
-      return;
-    }
+                        // Validate required fields
+                        if (!firstName) {
+                            alert('Please enter your first name.');
+                            document.getElementById('first-name').focus();
+                            return;
+                        }
+                        if (!lastName) {
+                            alert('Please enter your last name.');
+                            document.getElementById('last-name').focus();
+                            return;
+                        }
+                        if (!email) {
+                            alert('Please enter your email address.');
+                            document.getElementById('email').focus();
+                            return;
+                        }
+                        if (!phone) {
+                            alert('Please enter your phone number.');
+                            document.getElementById('phone').focus();
+                            return;
+                        }
+                        if (!street) {
+                            alert('Please enter your street address.');
+                            document.getElementById('street-address').focus();
+                            return;
+                        }
+                        if (!city) {
+                            alert('Please enter your city.');
+                            document.getElementById('city').focus();
+                            return;
+                        }
+                        if (cleaningAreas.length === 0) {
+                            alert('Please select at least one cleaning area.');
+                            document.getElementById('cleaning-kitchen').focus();
+                            return;
+                        }
 
-    // Prepare data for Firestore
-    const reservationData = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      phone: phone,
-      street: street,
-      city: city,
-      state: state,
-      postalCode: postalCode,
-      cleaningAreas: cleaningAreas,
-      membershipInterest: membershipInterest,
-      message: message,
-      createdAt: serverTimestamp()
-    };
+                        // Prepare data for Firestore
+                        const reservationData = {
+                            firstName: firstName,
+                            lastName: lastName,
+                            email: email,
+                            phone: phone,
+                            street: street,
+                            city: city,
+                            state: state,
+                            postalCode: postalCode,
+                            cleaningAreas: cleaningAreas,
+                            membershipInterest: membershipInterest,
+                            message: message,
+                            createdAt: serverTimestamp()
+                        };
 
-    try {
-      // Submit to Firestore
-      await addDoc(collection(db, 'reservations'), reservationData);
-      alert('Thank you! Your reservation has been submitted successfully.');
-      form.reset();
-    } catch (error) {
-      console.error('Error submitting reservation:', error.code || 'unknown_error');
-      alert('There was an error submitting your reservation. Please try again.');
-    }
-  });
-  } else {
-    console.error('Form not found! Check if the .booking-form selector is correct.');
-  }
-</script>
+                        console.log('Submitting reservation data...');
+
+                        try {
+                            // Submit to Firestore
+                            const docRef = await addDoc(collection(db, 'reservations'), reservationData);
+                            console.log('Reservation submitted successfully with ID:', docRef.id);
+                            alert('Thank you! Your reservation has been submitted successfully.');
+                            form.reset();
+                        } catch (error) {
+                            console.error('Error submitting reservation:', error.code || 'unknown_error', error.message || '');
+                            alert('There was an error submitting your reservation. Please try again.');
+                        }
+                    });
+                } else {
+                    console.error('Form not found! Check if the #reservation-form selector is correct.');
+                }
+            }
+
+            // Initialize form - handle both cases: DOM already loaded or still loading
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initForm);
+            } else {
+                initForm();
+            }
+        </script>
     </body>
 </html>
 
