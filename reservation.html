@@ -315,10 +315,7 @@ Bootstrap 5 HTML CSS Template
 
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
 
-            // TODO: Add SDKs for Firebase products that you want to use
-
-            // https://firebase.google.com/docs/web/setup#available-libraries
-
+            import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
             // Your web app's Firebase configuration
 
@@ -347,6 +344,93 @@ Bootstrap 5 HTML CSS Template
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  // Form submission handler
+  const form = document.querySelector('.booking-form');
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const street = document.getElementById('street-address').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const state = document.getElementById('state').value.trim();
+    const postalCode = document.getElementById('postal-code').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const membershipInterest = document.getElementById('membership-interest').checked;
+
+    // Get selected cleaning areas
+    const cleaningAreaCheckboxes = document.querySelectorAll('input[name="cleaning-areas[]"]:checked');
+    const cleaningAreas = Array.from(cleaningAreaCheckboxes).map(cb => cb.value);
+
+    // Validate required fields
+    if (!firstName) {
+      alert('Please enter your first name.');
+      document.getElementById('first-name').focus();
+      return;
+    }
+    if (!lastName) {
+      alert('Please enter your last name.');
+      document.getElementById('last-name').focus();
+      return;
+    }
+    if (!email) {
+      alert('Please enter your email address.');
+      document.getElementById('email').focus();
+      return;
+    }
+    if (!phone) {
+      alert('Please enter your phone number.');
+      document.getElementById('phone').focus();
+      return;
+    }
+    if (!street) {
+      alert('Please enter your street address.');
+      document.getElementById('street-address').focus();
+      return;
+    }
+    if (!city) {
+      alert('Please enter your city.');
+      document.getElementById('city').focus();
+      return;
+    }
+    if (cleaningAreas.length === 0) {
+      alert('Please select at least one cleaning area.');
+      document.getElementById('cleaning-kitchen').focus();
+      return;
+    }
+
+    // Prepare data for Firestore
+    const reservationData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      street: street,
+      city: city,
+      state: state,
+      postalCode: postalCode,
+      cleaningAreas: cleaningAreas,
+      membershipInterest: membershipInterest,
+      message: message,
+      createdAt: serverTimestamp()
+    };
+
+    try {
+      // Submit to Firestore
+      await addDoc(collection(db, 'reservations'), reservationData);
+      alert('Thank you! Your reservation has been submitted successfully.');
+      form.reset();
+    } catch (error) {
+      console.error('Error submitting reservation:', error.code || 'unknown_error');
+      alert('There was an error submitting your reservation. Please try again.');
+    }
+  });
 </script>
     </body>
 </html>
