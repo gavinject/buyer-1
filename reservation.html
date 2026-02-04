@@ -151,26 +151,162 @@ Bootstrap 5 HTML CSS Template
 
                                                 <!-- Cleaning Areas Section -->
                                                 <fieldset class="mb-4">
-                                                    <legend class="text-white mb-3">Select the areas you need cleaned*</legend>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-kitchen" class="form-check-input" value="kitchen" required>
-                                                        <label for="cleaning-kitchen" class="form-check-label text-white">Kitchen</label>
+                                                    <legend class="text-white mb-3">Select the services you need*</legend>
+
+                                                    <!-- Flat Fee Services Section -->
+                                                    <div class="service-section mb-4">
+                                                        <h5 class="text-white mb-3" style="border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Get Today – Flat Fees</h5>
+                                                        
+                                                        <!-- Trash Can -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-sm-8 mb-2 mb-sm-0">
+                                                                    <strong class="text-white">Trash Can</strong> — <span class="text-warning">$13.40</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Full interior and exterior wash</small>
+                                                                </div>
+                                                                <div class="col-12 col-sm-4 text-sm-end">
+                                                                    <div class="quantity-counter d-inline-flex align-items-center">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Trash Can" aria-label="Decrease Trash Can quantity">−</button>
+                                                                        <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-trash-can" data-service="Trash Can" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Trash Can quantity">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Trash Can" aria-label="Increase Trash Can quantity">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-check ms-0 mt-2">
+                                                                <input type="checkbox" name="flat-fee-addons[]" id="cleaning-trash-can-deodorizing" class="form-check-input" value="Trash Can - Deodorizing Add-on">
+                                                                <label for="cleaning-trash-can-deodorizing" class="form-check-label text-white-50">
+                                                                    Add Trash Can Deodorizing (+$5)
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Mailbox -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-sm-8 mb-2 mb-sm-0">
+                                                                    <strong class="text-white">Mailbox</strong> — <span class="text-warning">$10.05</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Exterior cleaning</small>
+                                                                </div>
+                                                                <div class="col-12 col-sm-4 text-sm-end">
+                                                                    <div class="quantity-counter d-inline-flex align-items-center">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Mailbox" aria-label="Decrease Mailbox quantity">−</button>
+                                                                        <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-mailbox" data-service="Mailbox" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Mailbox quantity">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Mailbox" aria-label="Increase Mailbox quantity">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Outdoor Furniture -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-sm-8 mb-2 mb-sm-0">
+                                                                    <strong class="text-white">Outdoor Furniture</strong> — <span class="text-warning">$13.40</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Plastic, metal, wood. Removes dirt, algae, and buildup</small>
+                                                                </div>
+                                                                <div class="col-12 col-sm-4 text-sm-end">
+                                                                    <div class="quantity-counter d-inline-flex align-items-center">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Outdoor Furniture" aria-label="Decrease Outdoor Furniture quantity">−</button>
+                                                                        <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-outdoor-furniture" data-service="Outdoor Furniture" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Outdoor Furniture quantity">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Outdoor Furniture" aria-label="Increase Outdoor Furniture quantity">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Garage Door -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-sm-8 mb-2 mb-sm-0">
+                                                                    <strong class="text-white">Garage Door</strong> — <span class="text-warning">$10.05</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Exterior only. Removes dirt and stains</small>
+                                                                </div>
+                                                                <div class="col-12 col-sm-4 text-sm-end">
+                                                                    <div class="quantity-counter d-inline-flex align-items-center">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="Garage Door" aria-label="Decrease Garage Door quantity">−</button>
+                                                                        <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-garage-door" data-service="Garage Door" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="Garage Door quantity">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="Garage Door" aria-label="Increase Garage Door quantity">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- AC Condenser -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12 col-sm-8 mb-2 mb-sm-0">
+                                                                    <strong class="text-white">AC Condenser</strong> — <span class="text-warning">$10.05</span><span class="text-white-50"> / each</span>
+                                                                    <small class="text-white-50 d-block mt-1">Light-pressure exterior rinse only. No disassembly</small>
+                                                                </div>
+                                                                <div class="col-12 col-sm-4 text-sm-end">
+                                                                    <div class="quantity-counter d-inline-flex align-items-center">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="decrease" data-service="AC Condenser" aria-label="Decrease AC Condenser quantity">−</button>
+                                                                        <input type="number" class="form-control form-control-sm text-center mx-2 qty-input" id="qty-ac-condenser" data-service="AC Condenser" value="0" min="0" readonly style="width: 50px; background-color: rgba(255,255,255,0.9);" aria-label="AC Condenser quantity">
+                                                                        <button type="button" class="btn btn-outline-light btn-sm qty-btn" data-action="increase" data-service="AC Condenser" aria-label="Increase AC Condenser quantity">+</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-bathroom" class="form-check-input" value="bathroom">
-                                                        <label for="cleaning-bathroom" class="form-check-label text-white">Bathroom</label>
-                                                    </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-bedroom" class="form-check-input" value="bedroom">
-                                                        <label for="cleaning-bedroom" class="form-check-label text-white">Bedroom</label>
-                                                    </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-living-room" class="form-check-input" value="living-room">
-                                                        <label for="cleaning-living-room" class="form-check-label text-white">Living Room</label>
-                                                    </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-exterior" class="form-check-input" value="exterior">
-                                                        <label for="cleaning-exterior" class="form-check-label text-white">Exterior</label>
+
+                                                    <!-- Per Square Foot Services Section -->
+                                                    <div class="service-section mb-4">
+                                                        <h5 class="text-white mb-3" style="border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Get a Quote – Per Square Foot</h5>
+                                                        
+                                                        <!-- Driveway / Sidewalk -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-driveway-sidewalk" class="form-check-input" value="Driveway / Sidewalk">
+                                                                <label for="cleaning-driveway-sidewalk" class="form-check-label text-white">
+                                                                    <strong>Driveway / Sidewalk</strong> — <span class="text-warning">$0.40 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Concrete or asphalt</small>
+                                                        </div>
+
+                                                        <!-- House Siding -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-house-siding" class="form-check-input" value="House Siding">
+                                                                <label for="cleaning-house-siding" class="form-check-label text-white">
+                                                                    <strong>House Siding</strong> — <span class="text-warning">$0.50 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior walls of home</small>
+                                                        </div>
+
+                                                        <!-- Deck & Patio -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-deck-patio" class="form-check-input" value="Deck & Patio">
+                                                                <label for="cleaning-deck-patio" class="form-check-label text-white">
+                                                                    <strong>Deck & Patio</strong> — <span class="text-warning">$0.40 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Wood or composite</small>
+                                                        </div>
+
+                                                        <!-- Roof Soft Wash -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-roof-soft-wash" class="form-check-input" value="Roof Soft Wash">
+                                                                <label for="cleaning-roof-soft-wash" class="form-check-label text-white">
+                                                                    <strong>Roof Soft Wash</strong> — <span class="text-warning">$0.60 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Bleach soft wash</small>
+                                                        </div>
+
+                                                        <!-- Gutters -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-gutters" class="form-check-input" value="Gutters">
+                                                                <label for="cleaning-gutters" class="form-check-label text-white">
+                                                                    <strong>Gutters</strong> — <span class="text-warning">$1.50 / linear ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior rinse only</small>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
 
@@ -306,6 +442,30 @@ Bootstrap 5 HTML CSS Template
         <script src="js/jquery.sticky.js"></script>
         <script src="js/vegas.min.js"></script>
         <script src="js/custom.js"></script>
+
+        <!-- Quantity Counter Functionality -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize quantity counter functionality
+                const qtyButtons = document.querySelectorAll('.qty-btn');
+                qtyButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const service = this.dataset.service;
+                        const action = this.dataset.action;
+                        const input = document.querySelector('.qty-input[data-service="' + service + '"]');
+                        let currentValue = parseInt(input.value) || 0;
+
+                        if (action === 'increase') {
+                            currentValue++;
+                        } else if (action === 'decrease' && currentValue > 0) {
+                            currentValue--;
+                        }
+
+                        input.value = currentValue;
+                    });
+                });
+            });
+        </script>
   
         <script type="module">
             // Import the functions you need from the SDKs you need
@@ -360,7 +520,23 @@ Bootstrap 5 HTML CSS Template
                         const message = document.getElementById('message').value.trim();
                         const membershipInterest = document.getElementById('membership-interest').checked;
 
-                        // Get selected cleaning areas
+                        // Get flat fee items with quantities > 0
+                        const flatFeeItems = {};
+                        const qtyInputs = document.querySelectorAll('.qty-input');
+                        qtyInputs.forEach(input => {
+                            const qty = parseInt(input.value) || 0;
+                            if (qty > 0) {
+                                flatFeeItems[input.dataset.service] = qty;
+                            }
+                        });
+
+                        // Get flat fee add-ons (like deodorizing)
+                        const flatFeeAddonCheckboxes = document.querySelectorAll('input[name="flat-fee-addons[]"]:checked');
+                        flatFeeAddonCheckboxes.forEach(cb => {
+                            flatFeeItems[cb.value] = 1;
+                        });
+
+                        // Get selected Per Square Foot cleaning areas (checkboxes)
                         const cleaningAreaCheckboxes = document.querySelectorAll('input[name="cleaning-areas[]"]:checked');
                         const cleaningAreas = Array.from(cleaningAreaCheckboxes).map(cb => cb.value);
 
@@ -395,9 +571,12 @@ Bootstrap 5 HTML CSS Template
                             document.getElementById('city').focus();
                             return;
                         }
-                        if (cleaningAreas.length === 0) {
-                            alert('Please select at least one cleaning area.');
-                            document.getElementById('cleaning-kitchen').focus();
+                        // Check if at least one service is selected (either flat fee or per sq ft)
+                        const hasFlatFeeItems = Object.keys(flatFeeItems).length > 0;
+                        const hasCleaningAreas = cleaningAreas.length > 0;
+                        if (!hasFlatFeeItems && !hasCleaningAreas) {
+                            alert('Please select at least one service.');
+                            document.getElementById('qty-trash-can').focus();
                             return;
                         }
 
@@ -411,6 +590,7 @@ Bootstrap 5 HTML CSS Template
                             city: city,
                             state: state,
                             postalCode: postalCode,
+                            flatFeeItems: flatFeeItems,
                             cleaningAreas: cleaningAreas,
                             membershipInterest: membershipInterest,
                             message: message,
@@ -425,6 +605,10 @@ Bootstrap 5 HTML CSS Template
                             console.log('Reservation submitted successfully with ID:', docRef.id);
                             alert('Thank you! Your reservation has been submitted successfully.');
                             form.reset();
+                            // Reset quantity counters to 0
+                            document.querySelectorAll('.qty-input').forEach(input => {
+                                input.value = 0;
+                            });
                         } catch (error) {
                             console.error('Error submitting reservation:', error.code || 'unknown_error', error.message || '');
                             alert('There was an error submitting your reservation. Please try again.');
