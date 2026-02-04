@@ -151,26 +151,132 @@ Bootstrap 5 HTML CSS Template
 
                                                 <!-- Cleaning Areas Section -->
                                                 <fieldset class="mb-4">
-                                                    <legend class="text-white mb-3">Select the areas you need cleaned*</legend>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-kitchen" class="form-check-input" value="kitchen" required>
-                                                        <label for="cleaning-kitchen" class="form-check-label text-white">Kitchen</label>
+                                                    <legend class="text-white mb-3">Select the services you need*</legend>
+
+                                                    <!-- Flat Fee Services Section -->
+                                                    <div class="service-section mb-4">
+                                                        <h5 class="text-white mb-3" style="border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Get Today – Flat Fees</h5>
+                                                        
+                                                        <!-- Trash Can -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-trash-can" class="form-check-input" value="Trash Can">
+                                                                <label for="cleaning-trash-can" class="form-check-label text-white">
+                                                                    <strong>Trash Can</strong> — <span class="text-warning">$13.40</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Full interior and exterior wash</small>
+                                                            <div class="form-check ms-4 mt-2">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-trash-can-deodorizing" class="form-check-input" value="Trash Can Deodorizing">
+                                                                <label for="cleaning-trash-can-deodorizing" class="form-check-label text-white-50">
+                                                                    Add Trash Can Deodorizing (+$5)
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Mailbox -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-mailbox" class="form-check-input" value="Mailbox">
+                                                                <label for="cleaning-mailbox" class="form-check-label text-white">
+                                                                    <strong>Mailbox</strong> — <span class="text-warning">$10.05</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior cleaning</small>
+                                                        </div>
+
+                                                        <!-- Outdoor Furniture -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-outdoor-furniture" class="form-check-input" value="Outdoor Furniture">
+                                                                <label for="cleaning-outdoor-furniture" class="form-check-label text-white">
+                                                                    <strong>Outdoor Furniture</strong> — <span class="text-warning">$13.40</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Plastic, metal, wood. Removes dirt, algae, and buildup</small>
+                                                        </div>
+
+                                                        <!-- Garage Door -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-garage-door" class="form-check-input" value="Garage Door">
+                                                                <label for="cleaning-garage-door" class="form-check-label text-white">
+                                                                    <strong>Garage Door</strong> — <span class="text-warning">$10.05</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior only. Removes dirt and stains</small>
+                                                        </div>
+
+                                                        <!-- AC Condenser -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-ac-condenser" class="form-check-input" value="AC Condenser">
+                                                                <label for="cleaning-ac-condenser" class="form-check-label text-white">
+                                                                    <strong>AC Condenser</strong> — <span class="text-warning">$10.05</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Light-pressure exterior rinse only. No disassembly</small>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-bathroom" class="form-check-input" value="bathroom">
-                                                        <label for="cleaning-bathroom" class="form-check-label text-white">Bathroom</label>
-                                                    </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-bedroom" class="form-check-input" value="bedroom">
-                                                        <label for="cleaning-bedroom" class="form-check-label text-white">Bedroom</label>
-                                                    </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-living-room" class="form-check-input" value="living-room">
-                                                        <label for="cleaning-living-room" class="form-check-label text-white">Living Room</label>
-                                                    </div>
-                                                    <div class="form-check mb-2">
-                                                        <input type="checkbox" name="cleaning-areas[]" id="cleaning-exterior" class="form-check-input" value="exterior">
-                                                        <label for="cleaning-exterior" class="form-check-label text-white">Exterior</label>
+
+                                                    <!-- Per Square Foot Services Section -->
+                                                    <div class="service-section mb-4">
+                                                        <h5 class="text-white mb-3" style="border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Get a Quote – Per Square Foot</h5>
+                                                        
+                                                        <!-- Driveway / Sidewalk -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-driveway-sidewalk" class="form-check-input" value="Driveway / Sidewalk">
+                                                                <label for="cleaning-driveway-sidewalk" class="form-check-label text-white">
+                                                                    <strong>Driveway / Sidewalk</strong> — <span class="text-warning">$0.40 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Concrete or asphalt</small>
+                                                        </div>
+
+                                                        <!-- House Siding -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-house-siding" class="form-check-input" value="House Siding">
+                                                                <label for="cleaning-house-siding" class="form-check-label text-white">
+                                                                    <strong>House Siding</strong> — <span class="text-warning">$0.50 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior walls of home</small>
+                                                        </div>
+
+                                                        <!-- Deck & Patio -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-deck-patio" class="form-check-input" value="Deck & Patio">
+                                                                <label for="cleaning-deck-patio" class="form-check-label text-white">
+                                                                    <strong>Deck & Patio</strong> — <span class="text-warning">$0.40 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Wood or composite</small>
+                                                        </div>
+
+                                                        <!-- Roof Soft Wash -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-roof-soft-wash" class="form-check-input" value="Roof Soft Wash">
+                                                                <label for="cleaning-roof-soft-wash" class="form-check-label text-white">
+                                                                    <strong>Roof Soft Wash</strong> — <span class="text-warning">$0.60 / sq ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Bleach soft wash</small>
+                                                        </div>
+
+                                                        <!-- Gutters -->
+                                                        <div class="service-card mb-3 p-3 rounded" style="background-color: rgba(255, 255, 255, 0.1);">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" name="cleaning-areas[]" id="cleaning-gutters" class="form-check-input" value="Gutters">
+                                                                <label for="cleaning-gutters" class="form-check-label text-white">
+                                                                    <strong>Gutters</strong> — <span class="text-warning">$1.50 / linear ft</span>
+                                                                </label>
+                                                            </div>
+                                                            <small class="text-white-50 d-block ms-4 mt-1">Exterior rinse only</small>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
 
@@ -396,8 +502,8 @@ Bootstrap 5 HTML CSS Template
                             return;
                         }
                         if (cleaningAreas.length === 0) {
-                            alert('Please select at least one cleaning area.');
-                            document.getElementById('cleaning-kitchen').focus();
+                            alert('Please select at least one service.');
+                            document.getElementById('cleaning-trash-can').focus();
                             return;
                         }
 
