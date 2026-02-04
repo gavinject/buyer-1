@@ -346,10 +346,18 @@ Bootstrap 5 HTML CSS Template
   const analytics = getAnalytics(app);
   const db = getFirestore(app);
 
+  // Debug: Verify Firebase initialization (shows boolean for production safety)
+  console.log('Firebase initialized:', !!app);
+  console.log('Firestore db available:', !!db);
+
   // Form submission handler
   const form = document.querySelector('.booking-form');
-  
-  form.addEventListener('submit', async function(e) {
+
+  // Debug: Check if form is found (shows boolean for production safety)
+  console.log('Form found:', !!form);
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
     // Get form values
@@ -431,6 +439,9 @@ Bootstrap 5 HTML CSS Template
       alert('There was an error submitting your reservation. Please try again.');
     }
   });
+  } else {
+    console.error('Form not found! Check if the .booking-form selector is correct.');
+  }
 </script>
     </body>
 </html>
